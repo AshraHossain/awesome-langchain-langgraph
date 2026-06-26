@@ -1,8 +1,5 @@
-// Searchable directory. Loads the same resources.json the README is built from.
 const STAGE_EMOJI = { build: "🔨", observe: "🔭", evaluate: "📊", deploy: "🚀" };
-
 const state = { data: null, q: "", stages: new Set(), group: "all" };
-
 const $ = (sel) => document.querySelector(sel);
 
 async function init() {
@@ -21,35 +18,29 @@ async function init() {
 
 function buildFilters() {
   const lc = $("#lifecycle-filters");
+  const gf = $("#group-filters");
+
   for (const stage of Object.keys(state.data.lifecycle_stages)) {
     const b = document.createElement("button");
     b.className = "chip";
     b.textContent = `${STAGE_EMOJI[stage] || ""} ${stage}`;
     b.title = state.data.lifecycle_stages[stage];
-    b.setAttribute("data-stage", stage);
-    b.addEventListener("click", function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      const s = this.getAttribute("data-stage");
-      state.stages.has(s) ? state.stages.delete(s) : state.stages.add(s);
-      this.classList.toggle("active");
+    b.addEventListener("click", () => {
+      state.stages.has(stage) ? state.stages.delete(stage) : state.stages.add(stage);
+      b.classList.toggle("active");
       render();
     });
     lc.appendChild(b);
   }
-  const gf = $("#group-filters");
+
   for (const [label, value] of [["All", "all"], ["Ecosystem", "ecosystem"], ["Community", "community"]]) {
     const b = document.createElement("button");
     b.className = "chip" + (value === "all" ? " active" : "");
     b.textContent = label;
-    b.setAttribute("data-group", value);
-    b.addEventListener("click", function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      const v = this.getAttribute("data-group");
-      state.group = v;
+    b.addEventListener("click", () => {
+      state.group = value;
       gf.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
-      this.classList.add("active");
+      b.classList.add("active");
       render();
     });
     gf.appendChild(b);
