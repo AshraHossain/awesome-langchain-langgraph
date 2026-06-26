@@ -73,6 +73,7 @@ First-party packages and tooling from LangChain that you drop in instead of writ
 - [open-deep-research](https://github.com/langchain-ai/open_deep_research) ⭐ 🔨 — Open, configurable deep-research agent built on LangGraph — a reference implementation for multi-step research.
 - [openevals](https://github.com/langchain-ai/openevals) ⭐ 📊 — Ready-made evaluators (LLM-as-judge, exact match, structured) for grading LLM outputs in CI and LangSmith.
 - [agentevals](https://github.com/langchain-ai/agentevals) ⭐ 📊 — Evaluators specialized for agent trajectories — judge tool-call sequences and multi-step decisions, not just final answers.
+- [LangGraph Bigtool](https://github.com/langchain-ai/langgraph-bigtool) ⭐ 🔨 — Prebuilt LangGraph agent that scales tool use by retrieving relevant tools from a large registry via semantic search.
 
 ### Integrations
 
