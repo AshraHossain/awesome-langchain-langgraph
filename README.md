@@ -1,4 +1,4 @@
-# Awesome LangChain & LangGraph [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome LangChain & LangGraph [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![Resources](https://img.shields.io/endpoint?url=https%3A%2F%2Fashrahossain.github.io%2Fawesome-langchain-langgraph%2Fapi%2Fshield.json)
 
 > The go-to directory for people building AI agents on the LangChain ecosystem — curated tools, integrations, templates, learning, and real-world community projects, organized around the full agent lifecycle: **build → observe → evaluate → deploy**.
 
@@ -157,6 +157,28 @@ Agents that read, write, and ship code.
 <!-- AUTOGEN:END -->
 
 ---
+
+## Data API
+
+The list is machine-readable, not just a web page. A static JSON API is
+generated from the same `resources.json` and published alongside the site, so
+you can build on top of it (dashboards, bots, your own filtered views):
+
+| Endpoint | What you get |
+|---|---|
+| [`/api/resources.json`](https://ashrahossain.github.io/awesome-langchain-langgraph/api/resources.json) | Flat list of every resource, each tagged with its category and group. |
+| [`/api/stats.json`](https://ashrahossain.github.io/awesome-langchain-langgraph/api/stats.json) | Counts by category, lifecycle stage, group, and official/community. |
+| [`/api/lifecycle/{build,observe,evaluate,deploy}.json`](https://ashrahossain.github.io/awesome-langchain-langgraph/api/lifecycle/build.json) | Just the resources for one lifecycle stage. |
+| [`/api/shield.json`](https://ashrahossain.github.io/awesome-langchain-langgraph/api/shield.json) | A [shields.io endpoint](https://shields.io/badges/endpoint-badge) powering the resource-count badge above. |
+
+```bash
+# e.g. list every deploy-stage tool, names only
+curl -s https://ashrahossain.github.io/awesome-langchain-langgraph/api/lifecycle/deploy.json | jq '.[].name'
+```
+
+## Submitting a resource, the easy way
+
+Open a **[Suggest a resource issue](../../issues/new?template=suggest-resource.yml)** and fill in the form. Once it's labeled `new-resource`, a bot parses it, validates it against the schema, and opens a PR for a maintainer to review — no fork or local setup required. (You can still open a PR by hand; see below.)
 
 ## Contributing
 
