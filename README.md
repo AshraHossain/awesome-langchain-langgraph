@@ -2,7 +2,7 @@
 
 > The go-to directory for people building AI agents on the LangChain ecosystem — curated tools, integrations, templates, learning, and real-world community projects, organized around the full agent lifecycle: **build → observe → evaluate → deploy**.
 
-🔎 **[Browse it as a searchable web page →](https://example.github.io/awesome-langchain-langgraph/)** *(set this to your GitHub Pages URL)*
+🔎 **[Browse it as a searchable web page →](https://example.github.io/awesome-langchain-langgraph/)** *(update to your URL — auto-deploys via [`pages.yml`](.github/workflows/pages.yml); just enable **Settings → Pages → Source: GitHub Actions**)*
 
 ---
 
