@@ -36,16 +36,16 @@ A typical journey through this list:
 ## Contents
 
 - [Core Ecosystem](#core-ecosystem)
-- [Official Tools & Prebuilt Agents](#official-tools-prebuilt-agents)
+- [Official Tools & Prebuilt Agents](#official-tools--prebuilt-agents)
 - [Integrations](#integrations)
-- [Templates & Starters](#templates-starters)
+- [Templates & Starters](#templates--starters)
 - [Learning Resources](#learning-resources)
-- [Community — RAG & Knowledge Assistants](#community-rag-knowledge-assistants)
-- [Community — Research Agents](#community-research-agents)
-- [Community — Web & Browser Automation](#community-web-browser-automation)
-- [Community — Finance & Markets](#community-finance-markets)
-- [Community — Productivity & Personal Assistants](#community-productivity-personal-assistants)
-- [Community — Developer Tools & Coding Agents](#community-developer-tools-coding-agents)
+- [Community — RAG & Knowledge Assistants](#community--rag--knowledge-assistants)
+- [Community — Research Agents](#community--research-agents)
+- [Community — Web & Browser Automation](#community--web--browser-automation)
+- [Community — Finance & Markets](#community--finance--markets)
+- [Community — Productivity & Personal Assistants](#community--productivity--personal-assistants)
+- [Community — Developer Tools & Coding Agents](#community--developer-tools--coding-agents)
 
 ### Core Ecosystem
 

@@ -9,7 +9,7 @@ validate:
 generate:
 	python scripts/generate_readme.py
 
-site:
+site: validate
 	python scripts/build_site.py
 
 links:

@@ -9,6 +9,7 @@ README is stale.
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 
 from lib import AUTOGEN_END, AUTOGEN_START, README_FILE, load_data
@@ -16,13 +17,20 @@ from lib import AUTOGEN_END, AUTOGEN_START, README_FILE, load_data
 STAGE_EMOJI = {"build": "🔨", "observe": "🔭", "evaluate": "📊", "deploy": "🚀"}
 
 
+def github_anchor(title: str) -> str:
+    """Slugify a heading the way GitHub does: lowercase, strip punctuation
+    (but keep spaces/hyphens), then spaces -> hyphens WITHOUT collapsing.
+    A naive slug breaks the TOC for any title containing '&' or '—'.
+    """
+    slug = re.sub(r"[^\w\s-]", "", title.lower())
+    return slug.replace(" ", "-")
+
+
 def render(data: dict) -> str:
     lines: list[str] = []
     lines.append("## Contents\n")
     for cat in data["categories"]:
-        anchor = cat["title"].lower().replace(" ", "-").replace("&", "").replace("—", "").replace("  ", "-")
-        anchor = "-".join(filter(None, anchor.split("-")))
-        lines.append(f"- [{cat['title']}](#{anchor})")
+        lines.append(f"- [{cat['title']}](#{github_anchor(cat['title'])})")
     lines.append("")
 
     for cat in data["categories"]:

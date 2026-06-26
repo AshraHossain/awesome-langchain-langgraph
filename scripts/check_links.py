@@ -29,14 +29,18 @@ def is_alive(status: int | str) -> bool:
     return isinstance(status, int) and (200 <= status < 400 or status in GATED)
 
 
-def check(url: str, timeout: float) -> tuple[str, int | str]:
-    try:
-        r = requests.head(url, allow_redirects=True, timeout=timeout, headers=HEADERS)
-        if r.status_code in (403, 405) or r.status_code >= 400:
-            r = requests.get(url, allow_redirects=True, timeout=timeout, headers=HEADERS, stream=True)
-        return url, r.status_code
-    except requests.RequestException as exc:
-        return url, type(exc).__name__
+def check(url: str, timeout: float, retries: int = 1) -> tuple[str, int | str]:
+    # Retry transient network errors once so a blip doesn't fail CI.
+    for attempt in range(retries + 1):
+        try:
+            r = requests.head(url, allow_redirects=True, timeout=timeout, headers=HEADERS)
+            if r.status_code in (403, 405) or r.status_code >= 400:
+                r = requests.get(url, allow_redirects=True, timeout=timeout, headers=HEADERS, stream=True)
+            return url, r.status_code
+        except requests.RequestException as exc:
+            if attempt == retries:
+                return url, type(exc).__name__
+    return url, "unreachable"  # unreachable, satisfies type checker
 
 
 def main() -> int:

@@ -12,6 +12,7 @@ RUN python scripts/validate.py && python scripts/build_site.py
 
 # Stage 2: serve the static, searchable directory.
 FROM nginx:1.27-alpine
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/site /usr/share/nginx/html
 EXPOSE 80
 HEALTHCHECK CMD wget -qO- http://localhost/ >/dev/null 2>&1 || exit 1

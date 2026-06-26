@@ -1,6 +1,8 @@
 """Generator must be deterministic, idempotent, and faithful to the data."""
 import pytest
-from generate_readme import render, splice
+import re
+
+from generate_readme import github_anchor, render, splice
 from lib import AUTOGEN_END, AUTOGEN_START, README_FILE, iter_resources, load_data
 
 
@@ -61,6 +63,22 @@ def test_legend_present(output):
 
 def test_contents_section_present(output):
     assert "## Contents" in output
+
+
+def test_toc_anchors_resolve_to_headings(data, output):
+    """Every Contents link must point at a heading that exists, using the
+    same slug GitHub computes — otherwise the TOC silently fails to jump."""
+    toc_anchors = re.findall(r"\]\(#([^)]+)\)", output)
+    heading_anchors = {github_anchor(line[4:]) for line in output.splitlines() if line.startswith("### ")}
+    assert toc_anchors, "no TOC links found"
+    for anchor in toc_anchors:
+        assert anchor in heading_anchors, f"dangling TOC anchor: #{anchor}"
+
+
+def test_github_anchor_handles_punctuation():
+    # GitHub keeps the double hyphen where '&'/'—' were removed.
+    assert github_anchor("Official Tools & Prebuilt Agents") == "official-tools--prebuilt-agents"
+    assert github_anchor("Community — RAG & Knowledge Assistants") == "community--rag--knowledge-assistants"
 
 
 def test_committed_readme_is_in_sync(data):

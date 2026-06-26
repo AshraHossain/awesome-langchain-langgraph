@@ -7,6 +7,11 @@ on:
   schedule:
     - cron: "0 6 * * 1"  # weekly link check (Mondays 06:00 UTC)
 
+# Cancel superseded runs on the same ref to save CI minutes.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
