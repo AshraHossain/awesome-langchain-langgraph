@@ -26,11 +26,15 @@ function buildFilters() {
     b.className = "chip";
     b.textContent = `${STAGE_EMOJI[stage] || ""} ${stage}`;
     b.title = state.data.lifecycle_stages[stage];
-    b.onclick = () => {
-      state.stages.has(stage) ? state.stages.delete(stage) : state.stages.add(stage);
-      b.classList.toggle("active");
+    b.setAttribute("data-stage", stage);
+    b.addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const s = this.getAttribute("data-stage");
+      state.stages.has(s) ? state.stages.delete(s) : state.stages.add(s);
+      this.classList.toggle("active");
       render();
-    };
+    });
     lc.appendChild(b);
   }
   const gf = $("#group-filters");
@@ -38,12 +42,16 @@ function buildFilters() {
     const b = document.createElement("button");
     b.className = "chip" + (value === "all" ? " active" : "");
     b.textContent = label;
-    b.onclick = () => {
-      state.group = value;
+    b.setAttribute("data-group", value);
+    b.addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const v = this.getAttribute("data-group");
+      state.group = v;
       gf.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
-      b.classList.add("active");
+      this.classList.add("active");
       render();
-    };
+    });
     gf.appendChild(b);
   }
 }
