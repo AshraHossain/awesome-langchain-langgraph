@@ -101,7 +101,7 @@
         },
         {
           "name": "LangGraph Studio",
-          "url": "https://github.com/langchain-ai/langgraph-studio",
+          "url": "https://docs.langchain.com/langgraph-platform/langgraph-studio",
           "description": "Visual IDE to run, debug, and time-travel through your LangGraph agent's state.",
           "official": true,
           "lifecycle": ["build", "observe"]
@@ -186,7 +186,7 @@
         },
         {
           "name": "langchain-chroma",
-          "url": "https://github.com/langchain-ai/langchain-chroma",
+          "url": "https://python.langchain.com/docs/integrations/vectorstores/chroma/",
           "description": "Chroma vector store integration for local and embedded RAG.",
           "official": true,
           "lifecycle": ["build"]

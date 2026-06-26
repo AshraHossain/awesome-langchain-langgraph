@@ -67,7 +67,7 @@ First-party packages and tooling from LangChain that you drop in instead of writ
 - [langgraph-supervisor](https://github.com/langchain-ai/langgraph-supervisor-py) ⭐ 🔨 — Prebuilt hierarchical multi-agent pattern: a central supervisor routes work to specialized agents.
 - [langgraph-swarm](https://github.com/langchain-ai/langgraph-swarm-py) ⭐ 🔨 — Prebuilt swarm pattern where agents hand off control to each other and the system remembers who was last active.
 - [LangMem](https://github.com/langchain-ai/langmem) ⭐ 🔨 — Long-term memory SDK: extract, store, and retrieve semantic, episodic, and procedural memories across threads.
-- [LangGraph Studio](https://github.com/langchain-ai/langgraph-studio) ⭐ 🔨 🔭 — Visual IDE to run, debug, and time-travel through your LangGraph agent's state.
+- [LangGraph Studio](https://docs.langchain.com/langgraph-platform/langgraph-studio) ⭐ 🔨 🔭 — Visual IDE to run, debug, and time-travel through your LangGraph agent's state.
 - [langchain-mcp-adapters](https://github.com/langchain-ai/langchain-mcp-adapters) ⭐ 🔨 — Use any Model Context Protocol (MCP) server's tools inside LangChain and LangGraph agents.
 - [Agent Chat UI](https://github.com/langchain-ai/agent-chat-ui) ⭐ 🚀 — Next.js chat front-end that talks to any LangGraph deployment out of the box, including streaming and interrupts.
 - [open-deep-research](https://github.com/langchain-ai/open_deep_research) ⭐ 🔨 — Open, configurable deep-research agent built on LangGraph — a reference implementation for multi-step research.
@@ -83,7 +83,7 @@ The plug-in surface: model providers, vector stores, and tools that snap into La
 - [langchain-openai](https://github.com/langchain-ai/langchain/tree/master/libs/partners/openai) ⭐ 🔨 — OpenAI and Azure OpenAI chat, embeddings, and tool-calling integration.
 - [langchain-google-genai](https://github.com/langchain-ai/langchain-google) ⭐ 🔨 — Google Gemini and Vertex AI model integrations.
 - [langchain-aws](https://github.com/langchain-ai/langchain-aws) ⭐ 🔨 — Amazon Bedrock models, Kendra retrieval, and other AWS integrations.
-- [langchain-chroma](https://github.com/langchain-ai/langchain-chroma) ⭐ 🔨 — Chroma vector store integration for local and embedded RAG.
+- [langchain-chroma](https://python.langchain.com/docs/integrations/vectorstores/chroma/) ⭐ 🔨 — Chroma vector store integration for local and embedded RAG.
 - [langchain-postgres (pgvector)](https://github.com/langchain-ai/langchain-postgres) ⭐ 🔨 — Postgres + pgvector vector store and chat-history store.
 - [Tavily Search](https://github.com/tavily-ai/langchain-tavily) 🔨 — Search API built for agents; a common web-retrieval tool in LangGraph research agents.
 

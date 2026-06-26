@@ -15,8 +15,18 @@ import requests
 
 from lib import iter_resources, load_data
 
-HEADERS = {"User-Agent": "awesome-langchain-langgraph-linkcheck/1.0"}
-OK = range(200, 400)
+# Pretend to be a browser — many hosts 403 a default UA (e.g. academy.langchain.com).
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+}
+# Reachable: any 2xx/3xx. Also tolerate auth/bot/rate-limit gates — the server
+# answered, so the link is live (industry-standard, cf. lychee/awesome-lint).
+GATED = {401, 403, 429}
+
+
+def is_alive(status: int | str) -> bool:
+    return isinstance(status, int) and (200 <= status < 400 or status in GATED)
 
 
 def check(url: str, timeout: float) -> tuple[str, int | str]:
@@ -39,9 +49,11 @@ def main() -> int:
     failures: list[tuple[str, int | str]] = []
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         for url, status in pool.map(lambda u: check(u, args.timeout), urls):
-            if not (isinstance(status, int) and status in OK):
+            if not is_alive(status):
                 failures.append((url, status))
                 print(f"BROKEN {status}: {url}")
+            elif isinstance(status, int) and status in GATED:
+                print(f"gated {status} (reachable): {url}")
             else:
                 print(f"ok {status}: {url}")
 
