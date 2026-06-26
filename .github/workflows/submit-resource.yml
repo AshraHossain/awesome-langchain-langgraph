@@ -1,0 +1,61 @@
+name: Resource submission → PR
+
+# When a 'Suggest a resource' issue is labeled, parse it into a validated
+# resources.json entry and open a PR automatically.
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  to-pr:
+    if: github.event.label.name == 'new-resource'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+
+      # Pass the body via env (NOT shell interpolation) to avoid injection.
+      - name: Stage issue body
+        env:
+          BODY: ${{ github.event.issue.body }}
+        run: printf '%s' "$BODY" > issue-body.md
+
+      - name: Convert submission to a validated entry
+        id: convert
+        run: python scripts/issue_to_resource.py --body-file issue-body.md
+
+      - name: Clean up scratch file
+        run: rm -f issue-body.md
+
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: resource/issue-${{ github.event.issue.number }}
+          title: "Add resource from #${{ github.event.issue.number }}"
+          commit-message: "content: add resource from issue #${{ github.event.issue.number }}"
+          body: |
+            Automated from issue #${{ github.event.issue.number }}.
+
+            The submission was parsed, validated against the schema, and the
+            README was regenerated. Please sanity-check the description and the
+            link before merging. Closes #${{ github.event.issue.number }}.
+          labels: new-resource
+
+      - name: Comment on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number,
+              body: "⚠️ Couldn't auto-convert this submission (likely a new category or a validation error). A maintainer can add it manually — see CONTRIBUTING.md. Details in the [workflow logs](" + context.payload.repository.html_url + "/actions/runs/" + context.runId + ")."
+            })

@@ -8,8 +8,9 @@ __pycache__/
 .venv/
 venv/
 
-# Generated copy staged for the static site (rebuilt by build_site.py)
+# Generated and staged for the static site (rebuilt by build_site.py)
 site/resources.json
+site/api/
 
 # OS / editor
 .DS_Store

@@ -9,13 +9,15 @@ from __future__ import annotations
 import shutil
 import sys
 
-from lib import DATA_FILE, SITE_DIR
+import build_api
+from lib import DATA_FILE, SITE_DIR, load_data
 
 
 def main() -> int:
     dest = SITE_DIR / "resources.json"
     shutil.copyfile(DATA_FILE, dest)
-    print(f"copied {DATA_FILE.name} -> {dest}")
+    n = build_api.write(load_data())
+    print(f"copied {DATA_FILE.name} -> {dest}; wrote {n} API artifacts")
     return 0
 
 
