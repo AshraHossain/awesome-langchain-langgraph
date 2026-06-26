@@ -1,0 +1,20 @@
+# Local-only rationale / working notes — deliberately not published.
+Notes.md
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Generated copy staged for the static site (rebuilt by build_site.py)
+site/resources.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+node_modules/
+.claude/

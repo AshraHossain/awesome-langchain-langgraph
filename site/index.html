@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Awesome LangChain &amp; LangGraph — searchable directory</title>
+  <meta name="description" content="The go-to directory for building AI agents on LangChain, LangGraph, Deep Agents, and LangSmith. Search and filter by use case and agent lifecycle." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Awesome <span class="accent">LangChain</span> &amp; <span class="accent">LangGraph</span></h1>
+    <p class="tagline">The directory for building AI agents — across the full lifecycle: build → observe → evaluate → deploy.</p>
+    <input id="search" type="search" placeholder="Search tools, integrations, projects…  (press /)" autocomplete="off" aria-label="Search resources" />
+    <div id="lifecycle-filters" class="filters" aria-label="Filter by lifecycle stage"></div>
+    <div id="group-filters" class="filters" aria-label="Filter by group"></div>
+    <p id="count" class="count" role="status"></p>
+  </header>
+
+  <main id="results" aria-live="polite"></main>
+
+  <footer>
+    <p>
+      Generated from <code>resources.json</code> ·
+      <a href="https://github.com/langchain-ai/langgraph">LangGraph</a> ·
+      <a href="https://docs.langchain.com/">Docs</a> ·
+      Contributions welcome — see <code>CONTRIBUTING.md</code>
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

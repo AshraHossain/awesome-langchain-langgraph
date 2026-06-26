@@ -1,0 +1,7 @@
+.git
+.github
+tests
+Notes.md
+__pycache__
+*.pyc
+.pytest_cache
