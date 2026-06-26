@@ -44,7 +44,7 @@ jobs:
         run: rm -f issue-body.md
 
       - name: Open pull request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: resource/issue-${{ github.event.issue.number }}
           title: "Add resource from #${{ github.event.issue.number }}"
