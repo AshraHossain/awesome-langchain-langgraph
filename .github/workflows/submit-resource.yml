@@ -31,6 +31,15 @@ jobs:
         id: convert
         run: python scripts/issue_to_resource.py --body-file issue-body.md
 
+      # PRs opened with the default GITHUB_TOKEN don't trigger the CI workflow
+      # (GitHub anti-recursion), so the bot must self-verify before opening one.
+      - name: Verify (schema, tests, README sync, links)
+        run: |
+          python scripts/validate.py
+          python -m pytest -q
+          python scripts/generate_readme.py --check
+          python scripts/check_links.py
+
       - name: Clean up scratch file
         run: rm -f issue-body.md
 
