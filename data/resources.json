@@ -19,56 +19,78 @@
           "url": "https://github.com/langchain-ai/langchain",
           "description": "The core framework: models, prompts, retrievers, tools, and the `create_agent` building block that everything else sits on.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "LangChain.js",
           "url": "https://github.com/langchain-ai/langchainjs",
           "description": "The TypeScript/JavaScript port of LangChain for building agents in Node and the browser.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "LangGraph (Python)",
           "url": "https://github.com/langchain-ai/langgraph",
           "description": "Low-level orchestration runtime for long-running, stateful agents. Durable execution, streaming, memory, and human-in-the-loop as first-class primitives.",
           "official": true,
-          "lifecycle": ["build", "deploy"]
+          "lifecycle": [
+            "build",
+            "deploy"
+          ]
         },
         {
           "name": "LangGraph.js",
           "url": "https://github.com/langchain-ai/langgraphjs",
           "description": "The TypeScript implementation of the LangGraph runtime.",
           "official": true,
-          "lifecycle": ["build", "deploy"]
+          "lifecycle": [
+            "build",
+            "deploy"
+          ]
         },
         {
           "name": "Deep Agents",
           "url": "https://github.com/langchain-ai/deepagents",
           "description": "The batteries-included agent harness on top of `create_agent`: built-in planning (write_todos), a virtual filesystem for context offloading, subagents with isolated context, and persistent memory. `pip install deepagents`.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "LangSmith",
           "url": "https://docs.smith.langchain.com/",
           "description": "Unified platform to trace, evaluate, and monitor LLM apps. The observe + evaluate half of the lifecycle, framework-agnostic.",
           "official": true,
-          "lifecycle": ["observe", "evaluate"]
+          "lifecycle": [
+            "observe",
+            "evaluate"
+          ]
         },
         {
           "name": "LangGraph Platform",
           "url": "https://www.langchain.com/langgraph-platform",
           "description": "Managed deployment for LangGraph agents: horizontally scaling task queues, persistence, cron, and the Assistants API.",
           "official": true,
-          "lifecycle": ["deploy"]
+          "lifecycle": [
+            "deploy"
+          ]
         },
         {
           "name": "LangChain Docs",
           "url": "https://docs.langchain.com/",
           "description": "The unified documentation hub spanning LangChain, LangGraph, Deep Agents, and LangSmith.",
           "official": true,
-          "lifecycle": ["build", "observe", "evaluate", "deploy"]
+          "lifecycle": [
+            "build",
+            "observe",
+            "evaluate",
+            "deploy"
+          ]
         }
       ]
     },
@@ -83,63 +105,91 @@
           "url": "https://github.com/langchain-ai/langgraph-supervisor-py",
           "description": "Prebuilt hierarchical multi-agent pattern: a central supervisor routes work to specialized agents.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "langgraph-swarm",
           "url": "https://github.com/langchain-ai/langgraph-swarm-py",
           "description": "Prebuilt swarm pattern where agents hand off control to each other and the system remembers who was last active.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "LangMem",
           "url": "https://github.com/langchain-ai/langmem",
           "description": "Long-term memory SDK: extract, store, and retrieve semantic, episodic, and procedural memories across threads.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "LangGraph Studio",
           "url": "https://docs.langchain.com/langgraph-platform/langgraph-studio",
           "description": "Visual IDE to run, debug, and time-travel through your LangGraph agent's state.",
           "official": true,
-          "lifecycle": ["build", "observe"]
+          "lifecycle": [
+            "build",
+            "observe"
+          ]
         },
         {
           "name": "langchain-mcp-adapters",
           "url": "https://github.com/langchain-ai/langchain-mcp-adapters",
           "description": "Use any Model Context Protocol (MCP) server's tools inside LangChain and LangGraph agents.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "Agent Chat UI",
           "url": "https://github.com/langchain-ai/agent-chat-ui",
           "description": "Next.js chat front-end that talks to any LangGraph deployment out of the box, including streaming and interrupts.",
           "official": true,
-          "lifecycle": ["deploy"]
+          "lifecycle": [
+            "deploy"
+          ]
         },
         {
           "name": "open-deep-research",
           "url": "https://github.com/langchain-ai/open_deep_research",
           "description": "Open, configurable deep-research agent built on LangGraph — a reference implementation for multi-step research.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "openevals",
           "url": "https://github.com/langchain-ai/openevals",
           "description": "Ready-made evaluators (LLM-as-judge, exact match, structured) for grading LLM outputs in CI and LangSmith.",
           "official": true,
-          "lifecycle": ["evaluate"]
+          "lifecycle": [
+            "evaluate"
+          ]
         },
         {
           "name": "agentevals",
           "url": "https://github.com/langchain-ai/agentevals",
           "description": "Evaluators specialized for agent trajectories — judge tool-call sequences and multi-step decisions, not just final answers.",
           "official": true,
-          "lifecycle": ["evaluate"]
+          "lifecycle": [
+            "evaluate"
+          ]
+        },
+        {
+          "name": "LangGraph Bigtool",
+          "url": "https://github.com/langchain-ai/langgraph-bigtool",
+          "description": "Prebuilt LangGraph agent that scales tool use by retrieving relevant tools from a large registry via semantic search.",
+          "official": true,
+          "lifecycle": [
+            "build"
+          ]
         }
       ]
     },
@@ -154,56 +204,72 @@
           "url": "https://python.langchain.com/docs/integrations/providers/",
           "description": "The canonical index of every provider, vector store, retriever, and tool integration.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "langchain-anthropic",
           "url": "https://github.com/langchain-ai/langchain/tree/master/libs/partners/anthropic",
           "description": "Claude model integration (chat, tool use, prompt caching).",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "langchain-openai",
           "url": "https://github.com/langchain-ai/langchain/tree/master/libs/partners/openai",
           "description": "OpenAI and Azure OpenAI chat, embeddings, and tool-calling integration.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "langchain-google-genai",
           "url": "https://github.com/langchain-ai/langchain-google",
           "description": "Google Gemini and Vertex AI model integrations.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "langchain-aws",
           "url": "https://github.com/langchain-ai/langchain-aws",
           "description": "Amazon Bedrock models, Kendra retrieval, and other AWS integrations.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "langchain-chroma",
           "url": "https://python.langchain.com/docs/integrations/vectorstores/chroma/",
           "description": "Chroma vector store integration for local and embedded RAG.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "langchain-postgres (pgvector)",
           "url": "https://github.com/langchain-ai/langchain-postgres",
           "description": "Postgres + pgvector vector store and chat-history store.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "Tavily Search",
           "url": "https://github.com/tavily-ai/langchain-tavily",
           "description": "Search API built for agents; a common web-retrieval tool in LangGraph research agents.",
           "official": false,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         }
       ]
     },
@@ -218,42 +284,56 @@
           "url": "https://github.com/langchain-ai/react-agent",
           "description": "The canonical tool-calling agent template — the fastest way to a working LangGraph agent.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "Retrieval Agent Template",
           "url": "https://github.com/langchain-ai/retrieval-agent-template",
           "description": "RAG agent scaffold with indexing and retrieval graphs ready to customize.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "Memory Agent Template",
           "url": "https://github.com/langchain-ai/memory-agent",
           "description": "Starter showing long-term memory with LangGraph's store and LangMem.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "Data Enrichment Template",
           "url": "https://github.com/langchain-ai/data-enrichment",
           "description": "Agent that researches and fills structured records — a template for extraction pipelines.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "New LangGraph Project",
           "url": "https://github.com/langchain-ai/new-langgraph-project",
           "description": "Minimal blank LangGraph project skeleton with config and CLI wiring.",
           "official": true,
-          "lifecycle": ["build", "deploy"]
+          "lifecycle": [
+            "build",
+            "deploy"
+          ]
         },
         {
           "name": "Chat LangChain",
           "url": "https://github.com/langchain-ai/chat-langchain",
           "description": "Full reference RAG chatbot over the LangChain docs — production patterns end to end.",
           "official": true,
-          "lifecycle": ["build", "deploy"]
+          "lifecycle": [
+            "build",
+            "deploy"
+          ]
         }
       ]
     },
@@ -268,42 +348,57 @@
           "url": "https://academy.langchain.com/",
           "description": "Free first-party courses, including the well-regarded Introduction to LangGraph.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "Deep Agents Overview (Docs)",
           "url": "https://docs.langchain.com/oss/python/deepagents/overview",
           "description": "The official conceptual guide to what Deep Agents add over a bare agent.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "AI Agents in LangGraph (DeepLearning.AI)",
           "url": "https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/",
           "description": "Short course building agents from scratch and then in LangGraph.",
           "official": false,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "LangChain Blog",
           "url": "https://blog.langchain.com/",
           "description": "Release notes, design rationale, and case studies straight from the team.",
           "official": true,
-          "lifecycle": ["build", "observe", "evaluate", "deploy"]
+          "lifecycle": [
+            "build",
+            "observe",
+            "evaluate",
+            "deploy"
+          ]
         },
         {
           "name": "LangChain YouTube",
           "url": "https://www.youtube.com/@LangChain",
           "description": "Walkthroughs, livestreams, and conference talks.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "LangSmith Evaluation Docs",
           "url": "https://docs.smith.langchain.com/evaluation",
           "description": "How to build datasets, run evaluators, and gate releases on quality.",
           "official": true,
-          "lifecycle": ["evaluate"]
+          "lifecycle": [
+            "evaluate"
+          ]
         }
       ]
     },
@@ -318,21 +413,29 @@
           "url": "https://github.com/onyx-dot-app/onyx",
           "description": "Open-source AI assistant that connects to your company's docs and apps for grounded answers.",
           "official": false,
-          "lifecycle": ["build", "deploy"]
+          "lifecycle": [
+            "build",
+            "deploy"
+          ]
         },
         {
           "name": "Quivr",
           "url": "https://github.com/QuivrHQ/quivr",
           "description": "Opinionated RAG framework and 'second brain' for plugging LLMs into your files.",
           "official": false,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "Verba",
           "url": "https://github.com/weaviate/Verba",
           "description": "Weaviate's open-source RAG application ('Golden RAGtriever') with a polished UI.",
           "official": false,
-          "lifecycle": ["build", "deploy"]
+          "lifecycle": [
+            "build",
+            "deploy"
+          ]
         }
       ]
     },
@@ -347,21 +450,27 @@
           "url": "https://github.com/assafelovic/gpt-researcher",
           "description": "Autonomous agent that runs multi-source web research and produces cited reports; offers a LangGraph multi-agent variant.",
           "official": false,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "GPT Newspaper",
           "url": "https://github.com/assafelovic/gpt-newspaper",
           "description": "LangGraph agent that curates and writes a personalized newspaper from live sources.",
           "official": false,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "Local Deep Researcher",
           "url": "https://github.com/langchain-ai/local-deep-researcher",
           "description": "Fully local web-research assistant on LangGraph that iteratively searches, summarizes, and fills knowledge gaps with any Ollama/LMStudio model.",
           "official": true,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         }
       ]
     },
@@ -376,14 +485,18 @@
           "url": "https://github.com/browser-use/browser-use",
           "description": "Library that lets LLM agents control a real browser; integrates with LangChain models.",
           "official": false,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "LaVague",
           "url": "https://github.com/lavague-ai/LaVague",
           "description": "Open-source Large Action Model framework that turns natural-language objectives into executed browser actions; integrates with LangChain.",
           "official": false,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         }
       ]
     },
@@ -398,14 +511,18 @@
           "url": "https://github.com/virattt/ai-hedge-fund",
           "description": "Educational multi-agent system (built with LangChain/LangGraph) that simulates investing analysts and a portfolio manager.",
           "official": false,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         },
         {
           "name": "AI Financial Agent",
           "url": "https://github.com/virattt/ai-financial-agent",
           "description": "Proof-of-concept financial-analysis agent over market data and filings, built with LangChain and LangGraph.",
           "official": false,
-          "lifecycle": ["build"]
+          "lifecycle": [
+            "build"
+          ]
         }
       ]
     },
@@ -420,14 +537,20 @@
           "url": "https://github.com/langchain-ai/executive-ai-assistant",
           "description": "Reference LangGraph email assistant that triages inbox and drafts replies with human-in-the-loop.",
           "official": true,
-          "lifecycle": ["build", "deploy"]
+          "lifecycle": [
+            "build",
+            "deploy"
+          ]
         },
         {
           "name": "Social Media Agent",
           "url": "https://github.com/langchain-ai/social-media-agent",
           "description": "LangGraph agent that turns URLs into drafted social posts with human review.",
           "official": true,
-          "lifecycle": ["build", "deploy"]
+          "lifecycle": [
+            "build",
+            "deploy"
+          ]
         }
       ]
     },
@@ -442,7 +565,10 @@
           "url": "https://github.com/langchain-ai/open-swe",
           "description": "Open-source asynchronous coding agent built on LangGraph that plans and executes repo changes.",
           "official": true,
-          "lifecycle": ["build", "deploy"]
+          "lifecycle": [
+            "build",
+            "deploy"
+          ]
         }
       ]
     }
