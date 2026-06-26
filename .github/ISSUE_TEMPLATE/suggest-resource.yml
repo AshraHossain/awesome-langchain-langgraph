@@ -1,0 +1,81 @@
+name: Suggest a resource
+description: Propose a tool, template, integration, or project for the list.
+title: "[resource] <name>"
+labels: ["new-resource"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! These fields map 1:1 to an entry in
+        `data/resources.json`, so a maintainer can paste them straight in.
+        Prefer opening a PR? See `CONTRIBUTING.md`.
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: LangGraph Supervisor
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: One sentence, 10–280 characters — what it does and why it's useful.
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Core Ecosystem
+        - Official Tools & Prebuilt Agents
+        - Integrations
+        - Templates & Starters
+        - Learning Resources
+        - Community — RAG & Knowledge Assistants
+        - Community — Research Agents
+        - Community — Web & Browser Automation
+        - Community — Finance & Markets
+        - Community — Productivity & Personal Assistants
+        - Community — Developer Tools & Coding Agents
+        - New category (describe below)
+    validations:
+      required: true
+  - type: checkboxes
+    id: lifecycle
+    attributes:
+      label: Lifecycle stage(s)
+      description: Which part(s) of build → observe → evaluate → deploy does it serve?
+      options:
+        - label: "🔨 build"
+        - label: "🔭 observe"
+        - label: "📊 evaluate"
+        - label: "🚀 deploy"
+  - type: dropdown
+    id: official
+    attributes:
+      label: Is this a first-party langchain-ai project?
+      options:
+        - "No"
+        - "Yes (official)"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: It's maintained and the link works.
+          required: true
+        - label: It genuinely uses or supports LangChain / LangGraph / Deep Agents / LangSmith.
+          required: true
+        - label: It isn't already on the list.
+          required: true

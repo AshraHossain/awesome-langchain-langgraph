@@ -355,6 +355,13 @@
           "description": "LangGraph agent that curates and writes a personalized newspaper from live sources.",
           "official": false,
           "lifecycle": ["build"]
+        },
+        {
+          "name": "Local Deep Researcher",
+          "url": "https://github.com/langchain-ai/local-deep-researcher",
+          "description": "Fully local web-research assistant on LangGraph that iteratively searches, summarizes, and fills knowledge gaps with any Ollama/LMStudio model.",
+          "official": true,
+          "lifecycle": ["build"]
         }
       ]
     },
@@ -370,6 +377,13 @@
           "description": "Library that lets LLM agents control a real browser; integrates with LangChain models.",
           "official": false,
           "lifecycle": ["build"]
+        },
+        {
+          "name": "LaVague",
+          "url": "https://github.com/lavague-ai/LaVague",
+          "description": "Open-source Large Action Model framework that turns natural-language objectives into executed browser actions; integrates with LangChain.",
+          "official": false,
+          "lifecycle": ["build"]
         }
       ]
     },
@@ -383,6 +397,13 @@
           "name": "AI Hedge Fund",
           "url": "https://github.com/virattt/ai-hedge-fund",
           "description": "Educational multi-agent system (built with LangChain/LangGraph) that simulates investing analysts and a portfolio manager.",
+          "official": false,
+          "lifecycle": ["build"]
+        },
+        {
+          "name": "AI Financial Agent",
+          "url": "https://github.com/virattt/ai-financial-agent",
+          "description": "Proof-of-concept financial-analysis agent over market data and filings, built with LangChain and LangGraph.",
           "official": false,
           "lifecycle": ["build"]
         }

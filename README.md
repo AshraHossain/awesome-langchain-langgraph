@@ -123,18 +123,21 @@ Agents that plan, search the web, and synthesize long-form reports.
 
 - [GPT Researcher](https://github.com/assafelovic/gpt-researcher) 🔨 — Autonomous agent that runs multi-source web research and produces cited reports; offers a LangGraph multi-agent variant.
 - [GPT Newspaper](https://github.com/assafelovic/gpt-newspaper) 🔨 — LangGraph agent that curates and writes a personalized newspaper from live sources.
+- [Local Deep Researcher](https://github.com/langchain-ai/local-deep-researcher) ⭐ 🔨 — Fully local web-research assistant on LangGraph that iteratively searches, summarizes, and fills knowledge gaps with any Ollama/LMStudio model.
 
 ### Community — Web & Browser Automation
 
 Agents that drive browsers and act on the live web.
 
 - [Browser Use](https://github.com/browser-use/browser-use) 🔨 — Library that lets LLM agents control a real browser; integrates with LangChain models.
+- [LaVague](https://github.com/lavague-ai/LaVague) 🔨 — Open-source Large Action Model framework that turns natural-language objectives into executed browser actions; integrates with LangChain.
 
 ### Community — Finance & Markets
 
 Agents applied to investing research and financial analysis.
 
 - [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) 🔨 — Educational multi-agent system (built with LangChain/LangGraph) that simulates investing analysts and a portfolio manager.
+- [AI Financial Agent](https://github.com/virattt/ai-financial-agent) 🔨 — Proof-of-concept financial-analysis agent over market data and filings, built with LangChain and LangGraph.
 
 ### Community — Productivity & Personal Assistants
 

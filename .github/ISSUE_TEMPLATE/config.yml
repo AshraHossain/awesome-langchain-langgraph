@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: LangChain Docs
+    url: https://docs.langchain.com/
+    about: Questions about LangChain/LangGraph itself belong in the official docs/forum, not here.
