@@ -78,3 +78,17 @@ main { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 4rem; }
 footer { border-top: 1px solid var(--border); padding: 1.5rem; text-align: center; color: var(--muted); font-size: .85rem; }
 footer a { color: var(--accent); }
 mark { background: var(--accent); color: #fff; border-radius: 3px; padding: 0 2px; }
+
+.guides { max-width: 960px; margin: 3rem auto 2rem; padding: 0 1.25rem; }
+.guide-section { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1rem; }
+.guide-title { display: block; padding: 1rem; cursor: pointer; font-weight: 600; color: var(--text); user-select: none; transition: all .12s ease; }
+.guide-title:hover { background: var(--chip); border-color: var(--accent); }
+.guide-section[open] .guide-title { background: var(--chip); border-bottom: 1px solid var(--border); }
+.guide-content { padding: 1.5rem; color: var(--text); line-height: 1.6; }
+.guide-content h2 { font-size: 1.1rem; margin: 1.5rem 0 .75rem; color: var(--accent); }
+.guide-content p { margin: .5rem 0; }
+.guide-content ul, .guide-content ol { margin: .5rem 0 1rem 2rem; }
+.guide-content li { margin-bottom: .5rem; }
+.guide-content pre { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; overflow-x: auto; margin: .75rem 0; }
+.guide-content code { font-family: monospace; font-size: .9rem; }
+.guide-content pre code { color: var(--accent); }

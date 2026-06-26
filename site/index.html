@@ -17,6 +17,71 @@
     <p id="count" class="count" role="status"></p>
   </header>
 
+  <section class="guides">
+    <details class="guide-section">
+      <summary class="guide-title">📖 User Guide</summary>
+      <div class="guide-content">
+        <h2>Getting Started</h2>
+        <p><strong>Docker (Recommended):</strong></p>
+        <pre><code>cd awesome-langchain-langgraph
+docker compose up -d</code></pre>
+        <p>Then open http://localhost:8080 in your browser.</p>
+
+        <h2>Searching & Filtering</h2>
+        <p><strong>Live Search:</strong> Press <code>/</code> anywhere to jump to search. Type keywords like <code>langgraph</code>, <code>rag</code>, <code>research</code>, <code>openai</code>.</p>
+
+        <h2>Lifecycle Filters</h2>
+        <p>Click any badge to filter by stage:</p>
+        <ul>
+          <li><strong>🔨 build</strong> — Compose chains, agents, and graphs</li>
+          <li><strong>🔭 observe</strong> — Trace every decision and call</li>
+          <li><strong>📊 evaluate</strong> — Score outputs against rubrics</li>
+          <li><strong>🚀 deploy</strong> — Ship to production</li>
+        </ul>
+
+        <h2>Group Filters</h2>
+        <p><strong>All:</strong> Everything (51 total) | <strong>Ecosystem:</strong> Official LangChain projects (40) | <strong>Community:</strong> User-built projects (11)</p>
+
+        <h2>Contributing</h2>
+        <p><strong>Option A (Easiest):</strong> Open an issue with "Suggest a resource" template → bot opens a PR → merged automatically.</p>
+        <p><strong>Option B (Direct):</strong> Clone, edit <code>data/resources.json</code>, run <code>python scripts/validate.py</code>, open PR.</p>
+      </div>
+    </details>
+
+    <details class="guide-section">
+      <summary class="guide-title">🎯 Visual Guide</summary>
+      <div class="guide-content">
+        <h2>The Lifecycle Journey</h2>
+        <p><strong>Week 1: 🔨 BUILD</strong> — Pick LangChain (models + tools) → Choose LangGraph (orchestration) → Use a template → Wire integrations</p>
+        <p><strong>Week 2: 🔭 OBSERVE</strong> — Enable LangSmith tracing → Open LangGraph Studio → Watch every tool call</p>
+        <p><strong>Week 3: 📊 EVALUATE</strong> — Build a test dataset → Run openevals scoring → Gate release on score</p>
+        <p><strong>Week 4: 🚀 DEPLOY</strong> — Choose LangGraph Platform (or Docker) → Add Agent Chat UI → Launch production</p>
+
+        <h2>Finding What You Need</h2>
+        <p><strong>Example 1: Research Agent</strong></p>
+        <ol>
+          <li>Click <strong>🔨 build</strong></li>
+          <li>Look for: Core Ecosystem (LangChain + LangGraph), Templates (Retrieval Agent), Community — Research Agents</li>
+          <li>Click <strong>🔭 observe</strong> to add LangSmith + Studio</li>
+          <li>Ready to ship? Click <strong>🚀 deploy</strong></li>
+        </ol>
+
+        <p><strong>Example 2: Evaluate Your Agent</strong></p>
+        <ol>
+          <li>Click <strong>📊 evaluate</strong></li>
+          <li>See: LangSmith (evaluation platform), openevals (ready-made scorers), agentevals (agent-specific scoring)</li>
+        </ol>
+
+        <h2>Real-Time Filtering</h2>
+        <p>Filters stack: search + lifecycle + group all work together. Type <code>langsmith</code> AND click <strong>📊 evaluate</strong> to see only LangSmith evaluation features.</p>
+
+        <h2>API Access</h2>
+        <pre><code>curl http://localhost:8080/api/stats.json | jq '.total'
+curl http://localhost:8080/api/lifecycle/deploy.json | jq '.[].name'</code></pre>
+      </div>
+    </details>
+  </section>
+
   <main id="results" aria-live="polite"></main>
 
   <footer>
